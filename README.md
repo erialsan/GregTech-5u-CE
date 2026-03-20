@@ -2,7 +2,7 @@ GT5 Unbound
 ===
 
 ## NOTE
-
+THIS IS AN UNOFFICIAL VERSION OF GT5
 This must be played with https://github.com/akirapriva/GT5U-Core
 
 ## About
