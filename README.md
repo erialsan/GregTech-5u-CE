@@ -1,14 +1,14 @@
-GT5 Unbound
+GT5u Unbound
 ===
 
 ## NOTE
 THIS IS AN UNOFFICIAL VERSION OF GT5
 
-This must be played with https://github.com/akirapriva/GT5U-Core
+This must be played with https://github.com/akirapriva/GT5UU-Core
 
 ## About
 
-GT5-Unofficial is a decompiled and modified version of GT5.07.07. However the goal of the GT5 Unbound is going on its own way for some content and remove the hard dependencies of GT:NH.
+GT5-Unofficial is a decompiled and modified version of GT5.07.07. However the goal of the GT5u Unbound is going on its own way for some content and remove the hard dependencies of GT:NH.
 
 ## Installation
 
@@ -18,13 +18,13 @@ Place the downloaded jar file into your mods/ folder. A number of other mods may
 
 ## Issues
 
-Please report any issues you to find to the main GT5 Unbound issue tracker. Include as much information as possible including
+Please report any issues you to find to the main GT5u Unbound issue tracker. Include as much information as possible including
 as version and steps to reproduce.
 
 ## Contribution
 
 Please do! However, please take a note of
-[current issues](https://github.com/akirapriva/GregTech-5-Unbound/issues) and what is currently being worked on.
+[current issues](https://github.com/akirapriva/GT5u-Unbound/issues) and what is currently being worked on.
 
 You don't need to clone the repository with full history to contribute, to save disk space and bandwidth you can clone:
 ```bash
@@ -37,7 +37,7 @@ the chance of strange errors.
 
 ## Attribution
 
-Some textures/ideas have been taken from future versions of GT and texture pack authors for GT5 Unbound. Credit goes to Jimbno for the UU-Tex texture pack and its contributions to the base pack here: https://github.com/Jimbno/UU-Tex.
+Some textures/ideas have been taken from future versions of GT and texture pack authors for GT5u Unbound. Credit goes to Jimbno for the UU-Tex texture pack and its contributions to the base pack here: https://github.com/Jimbno/UU-Tex.
 Many sound effects were backported from the GregTech Community Edition Unofficial / Modern team: https://github.com/GregTechCEu/
 
 ## Music duration metadata
