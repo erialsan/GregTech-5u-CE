@@ -2,8 +2,7 @@ package gregtech.loaders.oreprocessing;
 
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.primitiveBlastRecipes;
-import static gregtech.api.util.GTRecipeBuilder.MINUTES;
-import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeBuilder.*;
 import static gregtech.api.util.GTRecipeConstants.ADDITIVE_AMOUNT;
 import static gregtech.api.util.GTRecipeConstants.COIL_HEAT;
 
@@ -81,7 +80,8 @@ public class ProcessingOreSmelting implements gregtech.api.interfaces.IOreRecipe
                     addSmeltingRecipe(material, stack, OrePrefixes.ingot, 1);
                 }
 
-                if (material.mDirectSmelting == material) return;
+                if (material.mDirectSmelting == material && !material.contains(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE))
+                    return;
 
                 final int outputAmount = GTMod.proxy.mMixedOreOnlyYieldsTwoThirdsOfPureOre ? 2 : 3;
 
@@ -116,7 +116,7 @@ public class ProcessingOreSmelting implements gregtech.api.interfaces.IOreRecipe
             GTValues.RA.stdBuilder()
                 .itemInputs(material.getDust(2), new ItemStack(Blocks.sand, 2))
                 .itemOutputs(
-                    material.mDirectSmelting.getIngots(outputAmount),
+                    Materials.Copper.getIngots(outputAmount),
                     Materials.Ferrosilite.getDustSmall(2 * outputAmount))
                 .duration(2 * MINUTES)
                 .metadata(ADDITIVE_AMOUNT, 2)
@@ -125,7 +125,7 @@ public class ProcessingOreSmelting implements gregtech.api.interfaces.IOreRecipe
             GTValues.RA.stdBuilder()
                 .itemInputs(material.getDust(2), Materials.Glass.getDust(2))
                 .itemOutputs(
-                    material.mDirectSmelting.getIngots(outputAmount),
+                    Materials.Copper.getIngots(outputAmount),
                     Materials.Ferrosilite.getDustSmall(7 * outputAmount))
                 .duration(2 * MINUTES)
                 .metadata(ADDITIVE_AMOUNT, 2)
@@ -133,46 +133,136 @@ public class ProcessingOreSmelting implements gregtech.api.interfaces.IOreRecipe
 
             GTValues.RA.stdBuilder()
                 .itemInputs(material.getDust(2), Materials.SiliconDioxide.getDust(2))
-                .itemOutputs(
-                    material.mDirectSmelting.getIngots(outputAmount),
-                    Materials.Ferrosilite.getDustSmall(outputAmount))
+                .itemOutputs(Materials.Copper.getIngots(outputAmount), Materials.Ferrosilite.getDustSmall(outputAmount))
                 .duration(2 * MINUTES)
                 .metadata(ADDITIVE_AMOUNT, 2)
                 .addTo(primitiveBlastRecipes);
 
             GTValues.RA.stdBuilder()
                 .itemInputs(material.getDust(2), Materials.NetherQuartz.getDust(2))
-                .itemOutputs(
-                    material.mDirectSmelting.getIngots(outputAmount),
-                    Materials.Ferrosilite.getDustSmall(outputAmount))
+                .itemOutputs(Materials.Copper.getIngots(outputAmount), Materials.Ferrosilite.getDustSmall(outputAmount))
                 .duration(2 * MINUTES)
                 .metadata(ADDITIVE_AMOUNT, 2)
                 .addTo(primitiveBlastRecipes);
 
             GTValues.RA.stdBuilder()
                 .itemInputs(material.getDust(2), Materials.CertusQuartz.getDust(2))
-                .itemOutputs(
-                    material.mDirectSmelting.getIngots(outputAmount),
-                    Materials.Ferrosilite.getDustSmall(outputAmount))
+                .itemOutputs(Materials.Copper.getIngots(outputAmount), Materials.Ferrosilite.getDustSmall(outputAmount))
                 .duration(2 * MINUTES)
                 .metadata(ADDITIVE_AMOUNT, 2)
                 .addTo(primitiveBlastRecipes);
+
         } else if (material == Materials.Tetrahedrite) {
             GTValues.RA.stdBuilder()
                 .itemInputs(material.getDust(2))
-                .itemOutputs(
-                    material.mDirectSmelting.getIngots(outputAmount),
-                    Materials.Antimony.getNuggets(3 * outputAmount))
+                .itemOutputs(Materials.Copper.getIngots(outputAmount), Materials.Antimony.getNuggets(3 * outputAmount))
                 .duration(2 * MINUTES)
                 .metadata(ADDITIVE_AMOUNT, 2)
                 .addTo(primitiveBlastRecipes);
+
         } else if (material == Materials.Galena) {
             GTValues.RA.stdBuilder()
                 .itemInputs(material.getDust(2))
-                .itemOutputs(
-                    material.mDirectSmelting.getIngots(outputAmount),
-                    Materials.Silver.getNuggets(3 * outputAmount))
+                .itemOutputs(Materials.Lead.getIngots(outputAmount), Materials.Silver.getNuggets(3 * outputAmount))
                 .duration(2 * MINUTES)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Pyrite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.RoastedIron.getDust(2))
+                .duration(3 * MINUTES)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(7), Materials.Calcite.getDust(2))
+                .itemOutputs(Materials.Iron.getIngots(3))
+                .duration(4 * MINUTES)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.RoastedIron) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.WroughtIron.getNuggets(3))
+                .duration(2 * MINUTES)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.BandedIron) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Iron.getIngots(2))
+                .duration(150 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.BrownLimonite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Iron.getIngots(2))
+                .duration(150 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Cassiterite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Tin.getIngots(4))
+                .duration(180 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.CassiteriteSand) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Tin.getIngots(4))
+                .duration(150 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Garnierite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Nickel.getIngots(2))
+                .duration(150 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Magnetite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(11))
+                .itemOutputs(Materials.Iron.getIngots(4))
+                .duration(180 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Molybdenite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(6))
+                .itemOutputs(Materials.Molybdenum.getIngots(2))
+                .duration(250 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Sphalerite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Zinc.getIngots(2))
+                .duration(180 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Stibnite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Antimony.getIngots(2))
+                .duration(220 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Malachite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Copper.getIngots(2))
+                .duration(150 * SECONDS)
+                .metadata(ADDITIVE_AMOUNT, 2)
+                .addTo(primitiveBlastRecipes);
+        } else if (material == Materials.Pentlandite) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(material.getDust(3))
+                .itemOutputs(Materials.Nickel.getIngots(4))
+                .duration(180 * SECONDS)
                 .metadata(ADDITIVE_AMOUNT, 2)
                 .addTo(primitiveBlastRecipes);
         }

@@ -5618,7 +5618,7 @@ public class MaterialsInit {
             .addElectrolyzerRecipe()
             .addMaterial(Materials.Iron, 2)
             .addMaterial(Materials.Oxygen, 3)
-            .setDirectSmelting(() -> Materials.Iron)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.ELECTROMAGNETIC_SEPERATION_IRON)
             .constructMaterial();
     }
@@ -5775,7 +5775,7 @@ public class MaterialsInit {
             .addMaterial(Materials.Oxygen, 2)
             .addOreByproduct(() -> Materials.Malachite)
             .addOreByproduct(() -> Materials.YellowLimonite)
-            .setDirectSmelting(() -> Materials.Iron)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.BLASTFURNACE_CALCITE_DOUBLE)
             .addSubTag(SubTag.ELECTROMAGNETIC_SEPERATION_IRON)
             .constructMaterial();
@@ -5832,7 +5832,7 @@ public class MaterialsInit {
             .addMaterial(Materials.Tin, 1)
             .addMaterial(Materials.Oxygen, 2)
             .addOreByproduct(() -> Materials.Tin)
-            .setDirectSmelting(() -> Materials.Tin)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .constructMaterial();
     }
 
@@ -5849,7 +5849,7 @@ public class MaterialsInit {
             .addMaterial(Materials.Tin, 1)
             .addMaterial(Materials.Oxygen, 2)
             .addOreByproduct(() -> Materials.Tin)
-            .setDirectSmelting(() -> Materials.Tin)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .constructMaterial();
     }
 
@@ -5869,7 +5869,6 @@ public class MaterialsInit {
             .addOreByproduct(() -> Materials.Cobalt)
             .addOreByproduct(() -> Materials.Cadmium)
             .addOreByproduct(() -> Materials.Gold)
-            .setDirectSmelting(() -> Materials.Copper)
             .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
             .constructMaterial();
@@ -6047,8 +6046,6 @@ public class MaterialsInit {
             .addOreByproduct(() -> Materials.Palladium)
             .addOreByproduct(() -> Materials.Nickel)
             .addOreByproduct(() -> Materials.Iridium)
-            .setDirectSmelting(() -> Materials.Platinum)
-            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.WASHING_MERCURY)
             .constructMaterial();
     }
@@ -6278,7 +6275,7 @@ public class MaterialsInit {
             .addOreByproduct(() -> Materials.Sulfur)
             .addOreByproduct(() -> Materials.Silver)
             .addOreByproduct(() -> Materials.Lead)
-            .setDirectSmelting(() -> Materials.Lead)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .constructMaterial();
     }
 
@@ -6295,7 +6292,7 @@ public class MaterialsInit {
             .addMaterial(Materials.Oxygen, 1)
             .addOreByproduct(() -> Materials.Nickel)
             .addSubTag(SubTag.BLASTFURNACE_CALCITE_DOUBLE)
-            .setDirectSmelting(() -> Materials.Nickel)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .constructMaterial();
     }
 
@@ -6593,7 +6590,7 @@ public class MaterialsInit {
             .addAspect(TCAspects.MAGNETO, 1)
             .addOreByproduct(() -> Materials.Iron)
             .addOreByproduct(() -> Materials.Gold)
-            .setDirectSmelting(() -> Materials.Iron)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.BLASTFURNACE_CALCITE_DOUBLE)
             .addSubTag(SubTag.ELECTROMAGNETIC_SEPERATION_GOLD)
             .constructMaterial();
@@ -6643,7 +6640,6 @@ public class MaterialsInit {
             .addMaterial(Materials.Molybdenum, 1)
             .addMaterial(Materials.Sulfur, 2)
             .addOreByproduct(() -> Materials.Molybdenum)
-            .setDirectSmelting(() -> Materials.Molybdenum)
             .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .constructMaterial();
     }
@@ -6980,8 +6976,7 @@ public class MaterialsInit {
             .addOreByproduct(() -> Materials.Sulfur)
             .addOreByproduct(() -> Materials.TricalciumPhosphate)
             .addOreByproduct(() -> Materials.Iron)
-            .setDirectSmelting(() -> Materials.Iron)
-            .addSubTag(SubTag.BLASTFURNACE_CALCITE_DOUBLE)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.ELECTROMAGNETIC_SEPERATION_IRON)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
             .constructMaterial();
@@ -8705,7 +8700,7 @@ public class MaterialsInit {
             .setARGB(0x00946262)
             .addDustItems()
             .addOreItems()
-            .setDirectSmelting(() -> Materials.Iron)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .constructMaterial();
     }
 
@@ -9040,7 +9035,7 @@ public class MaterialsInit {
             .addOreByproduct(() -> Materials.Cadmium)
             .addOreByproduct(() -> Materials.Gallium)
             .addOreByproduct(() -> Materials.Zinc)
-            .setDirectSmelting(() -> Materials.Zinc)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
             .constructMaterial();
     }
@@ -9111,7 +9106,7 @@ public class MaterialsInit {
             .addMaterial(Materials.Antimony, 2)
             .addMaterial(Materials.Sulfur, 3)
             .addOreByproduct(() -> Materials.Antimony)
-            .setDirectSmelting(() -> Materials.Antimony)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .constructMaterial();
     }
 
@@ -9171,7 +9166,6 @@ public class MaterialsInit {
             .addMaterial(Materials.Iron, 1)
             .addOreByproduct(() -> Materials.Antimony)
             .addOreByproduct(() -> Materials.Zinc)
-            .setDirectSmelting(() -> Materials.Copper)
             .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
             .addSubTag(SubTag.WASHING_SODIUMPERSULFATE)
@@ -9404,7 +9398,6 @@ public class MaterialsInit {
             .addOreByproduct(() -> Materials.Nickel)
             .addOreByproduct(() -> Materials.BrownLimonite)
             .addOreByproduct(() -> Materials.Cobalt)
-            .setDirectSmelting(() -> Materials.Iron)
             .addSubTag(SubTag.BLASTFURNACE_CALCITE_DOUBLE)
             .addSubTag(SubTag.ELECTROMAGNETIC_SEPERATION_IRON)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
@@ -10271,7 +10264,6 @@ public class MaterialsInit {
             .addAspect(TCAspects.MAGNETO, 1)
             .addOreByproduct(() -> Materials.GraniteBlack)
             .addOreByproduct(() -> Materials.Magnetite)
-            .setDirectSmelting(() -> Materials.Iron)
             .addSubTag(SubTag.BLASTFURNACE_CALCITE_DOUBLE)
             .addSubTag(SubTag.ELECTROMAGNETIC_SEPERATION_GOLD)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
@@ -10532,7 +10524,7 @@ public class MaterialsInit {
             .addOreByproduct(() -> Materials.Copper)
             .addOreByproduct(() -> Materials.BrownLimonite)
             .addOreByproduct(() -> Materials.Calcite)
-            .setDirectSmelting(() -> Materials.Copper)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
             .constructMaterial();
     }
@@ -10786,7 +10778,7 @@ public class MaterialsInit {
             .addOreByproduct(() -> Materials.Iron)
             .addOreByproduct(() -> Materials.Sulfur)
             .addOreByproduct(() -> Materials.Cobalt)
-            .setDirectSmelting(() -> Materials.Nickel)
+            .addSubTag(SubTag.DONT_ADD_DEFAULT_BBF_RECIPE)
             .addSubTag(SubTag.ELECTROMAGNETIC_SEPERATION_IRON)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
             .constructMaterial();
@@ -11918,7 +11910,6 @@ public class MaterialsInit {
             .addAspect(TCAspects.MAGNETO, 1)
             .addOreByproduct(() -> Materials.Basalt)
             .addOreByproduct(() -> Materials.Magnetite)
-            .setDirectSmelting(() -> Materials.Iron)
             .addSubTag(SubTag.BLASTFURNACE_CALCITE_DOUBLE)
             .addSubTag(SubTag.ELECTROMAGNETIC_SEPERATION_GOLD)
             .addSubTag(SubTag.INDUCTIONSMELTING_LOW_OUTPUT)
