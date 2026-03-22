@@ -97,8 +97,9 @@ public class ToolLoader implements IWerkstoffRunnable {
                     werkstoff.getBridgeMaterial().mHandleMaterial,
                     null),
                 GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
-                new Object[] { " fS", " Sh", "W  ", 'S', stick.get(werkstoff.getBridgeMaterial()), 'W',
-                    stick.get(werkstoff.getBridgeMaterial().mHandleMaterial) });
+                new Object[] { "kfS", "RSh", "PR ", 'S', stick.get(werkstoff.getBridgeMaterial()), 'P',
+                    OrePrefixes.plank.get(Materials.Wood), 'R',
+                    stickLong.get(werkstoff.getBridgeMaterial().mHandleMaterial) });
             GTModHandler.addCraftingRecipe(
                 GTOreDictUnificator.get(toolHeadWrench, werkstoff.getBridgeMaterial(), 1L),
                 GTModHandler.RecipeBits.BITS_STD,
@@ -275,7 +276,7 @@ public class ToolLoader implements IWerkstoffRunnable {
                 werkstoff.getBridgeMaterial(),
                 null),
             GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
-            new Object[] { "IhI", "III", " I ", 'I', ingot.get(werkstoff.getBridgeMaterial()) });
+            new Object[] { "IhI", "III", " I ", 'I', plate.get(werkstoff.getBridgeMaterial()) });
         GTModHandler.addCraftingRecipe(
             MetaGeneratedTool01.INSTANCE.getToolWithStats(
                 IDMetaTool01.CROWBAR.ID,

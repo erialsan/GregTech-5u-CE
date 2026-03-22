@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.NotEnoughItems;
 import static gregtech.api.enums.Mods.StorageDrawers;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -2465,19 +2466,22 @@ public class MTERecipeLoader implements Runnable {
         GTModHandler.addCraftingRecipe(
             ItemList.Machine_Bronze_Boiler.get(1L),
             GTModHandler.RecipeBits.BITSD,
-            new Object[] { aTextPlate, "PwP", "BFB", 'F', OreDictNames.craftingIronFurnace, 'P',
-                OrePrefixes.plate.get(Materials.Bronze), 'B', new ItemStack(Blocks.brick_block, 1) });
+            new Object[] { "SPS", "PwP", "BFB", 'F', OreDictNames.craftingIronFurnace, 'P',
+                OrePrefixes.plateDouble.get(Materials.Bronze), 'S', OrePrefixes.screw.get(Materials.Bronze), 'B',
+                new ItemStack(Blocks.brick_block, 1) });
         GTModHandler.addCraftingRecipe(
             ItemList.Machine_Steel_Boiler.get(1L),
             GTModHandler.RecipeBits.BITSD,
-            new Object[] { aTextPlate, "PwP", "BFB", 'F', OreDictNames.craftingIronFurnace, 'P',
-                OrePrefixes.plate.get(Materials.Steel), 'B', new ItemStack(Blocks.brick_block, 1) });
+            new Object[] { "SPS", "PwP", "BFB", 'F', OreDictNames.craftingIronFurnace, 'P',
+                OrePrefixes.plateDouble.get(Materials.Steel), 'S', OrePrefixes.screw.get(Materials.Steel), 'B',
+                ItemList.Casing_Firebricks });
         GTModHandler.addCraftingRecipe(
             ItemList.Machine_Steel_Boiler_Lava.get(1L),
             GTModHandler.RecipeBits.BITSD,
-            new Object[] { aTextPlate, "PTP", aTextPlateMotor, 'M', ItemList.Hull_HP, 'P',
-                OrePrefixes.plate.get(Materials.Steel), 'T',
-                GTModHandler.getModItem(BuildCraftFactory.ID, "tankBlock", 1L, 0) });
+            new Object[] { "PVP", "DTD", "BFB", 'F', OreDictNames.craftingIronFurnace, 'D',
+                OrePrefixes.plateTriple.get(Materials.Steel), 'P', OrePrefixes.plate.get(Materials.Steel), 'T',
+                GTModHandler.getModItem(BuildCraftFactory.ID, "tankBlock", 1L, 0), 'V',
+                GTModHandler.getModItem(NewHorizonsCoreMod.ID, "SteelBars", 1L), 'B', ItemList.Casing_Firebricks });
 
         GTModHandler.addCraftingRecipe(
             ItemList.Machine_Bronze_Boiler_Solar.get(1L),

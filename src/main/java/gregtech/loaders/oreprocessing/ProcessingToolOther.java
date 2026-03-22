@@ -45,7 +45,7 @@ public class ProcessingToolOther implements gregtech.api.interfaces.IOreRecipeRe
                     MetaGeneratedTool01.INSTANCE
                         .getToolWithStats(IDMetaTool01.WRENCH.ID, 1, aMaterial, aMaterial, null),
                     GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
-                    new Object[] { "IhI", "III", " I ", 'I', OrePrefixes.ingot.get(aMaterial) });
+                    new Object[] { "IhI", "III", " I ", 'I', OrePrefixes.plate.get(aMaterial) });
                 GTModHandler.addCraftingRecipe(
                     MetaGeneratedTool01.INSTANCE
                         .getToolWithStats(IDMetaTool01.CROWBAR.ID, 1, aMaterial, aMaterial, null),
@@ -55,8 +55,9 @@ public class ProcessingToolOther implements gregtech.api.interfaces.IOreRecipeRe
                     MetaGeneratedTool01.INSTANCE
                         .getToolWithStats(IDMetaTool01.SCREWDRIVER.ID, 1, aMaterial, aMaterial.mHandleMaterial, null),
                     GTModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GTModHandler.RecipeBits.BUFFERED,
-                    new Object[] { " fS", " Sh", "W  ", 'S', OrePrefixes.stick.get(aMaterial), 'W',
-                        OrePrefixes.stick.get(aMaterial.mHandleMaterial) });
+                    new Object[] { "kfS", "RSh", "PR ", 'S', OrePrefixes.stick.get(aMaterial), 'P',
+                        OrePrefixes.plank.get(Materials.Wood), 'R',
+                        OrePrefixes.stickLong.get(aMaterial.mHandleMaterial) });
                 GTModHandler.addCraftingRecipe(
                     MetaGeneratedTool01.INSTANCE
                         .getToolWithStats(IDMetaTool01.WIRECUTTER.ID, 1, aMaterial, aMaterial, null),
