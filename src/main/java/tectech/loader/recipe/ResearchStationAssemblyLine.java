@@ -17,7 +17,6 @@ import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -47,11 +46,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.rwtema.extrautils.ExtraUtils;
-
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
-import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.ItemList;
@@ -68,13 +64,10 @@ import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import kekztech.common.Blocks;
 import kekztech.common.TileEntities;
-import tconstruct.tools.TinkerTools;
 import tectech.recipe.TTRecipeAdder;
 import tectech.thing.CustomItemList;
 import tectech.thing.block.BlockGodforgeGlass;
 import tectech.thing.block.BlockQuantumGlass;
-import vexatos.tgregworks.reference.PartTypes;
-import vexatos.tgregworks.util.TGregUtils;
 
 public class ResearchStationAssemblyLine implements Runnable {
 
@@ -88,7 +81,7 @@ public class ResearchStationAssemblyLine implements Runnable {
         addWirelessEnergyRecipes();
         addGodforgeRecipes();
 
-        if (TinkersGregworks.isModLoaded() && Avaritia.isModLoaded() // Infinity, Cosmic Neutronium
+        if (Avaritia.isModLoaded() // Infinity, Cosmic Neutronium
             && ExtraUtilities.isModLoaded() // Bedrockium
         ) {
             addEOHRecipes();
@@ -2315,10 +2308,10 @@ public class ResearchStationAssemblyLine implements Runnable {
     }
 
     private void addEOHRecipes() {
-        ItemStack largeShirabonPlate = TGregUtils.newItemStack(Materials.get("Shirabon"), PartTypes.LargePlate, 1);
-        ItemStack largeInfinityPlate = new ItemStack(TinkerTools.largePlate, 1, Tonkers.infinityMetalId);
-        ItemStack largeBedrockiumPlate = new ItemStack(TinkerTools.largePlate, 1, ExtraUtils.tcon_bedrock_material_id);
-        ItemStack largeCosmicNeutroniumPlate = new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId);
+        ItemStack largeShirabonPlate = GTOreDictUnificator.get("plateDenseShirabon", 64);
+        ItemStack largeInfinityPlate = GTOreDictUnificator.get("plateDenseInfinity", 64);
+        ItemStack largeBedrockiumPlate = GTOreDictUnificator.get("plateDenseBedrockium", 64);
+        ItemStack largeCosmicNeutroniumPlate = GTOreDictUnificator.get("plateDenseCosmicNeutronium", 64);
 
         final FluidStack[] specialFluid = new FluidStack[] { Materials.SpaceTime.getMolten(1_440),
             Materials.SpaceTime.getMolten(1_440), Materials.SpaceTime.getMolten(1_440),

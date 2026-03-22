@@ -3099,9 +3099,9 @@ public class MTERecipeLoader implements Runnable {
         GTModHandler.addCraftingRecipe(
             ItemList.Machine_Multi_BlastFurnace.get(1L),
             GTModHandler.RecipeBits.BITSD,
-            new Object[] { "FFF", aTextCableHull, aTextWireCoil, 'M', ItemList.Casing_HeatProof, 'F',
-                OreDictNames.craftingIronFurnace, 'C', OrePrefixes.circuit.get(Materials.LV), 'W',
-                OrePrefixes.cableGt01.get(Materials.Tin) });
+            new Object[] { "CBC", "MFM", aTextWireCoil, 'M', ItemList.Casing_HeatProof, 'F',
+                ItemList.Machine_LV_E_Furnace, 'B', GregtechItemList.BoilerChassis_Tier0, 'C',
+                OrePrefixes.circuit.get(Materials.LV), 'W', OrePrefixes.cableGt04.get(Materials.Tin) });
         GTModHandler.addCraftingRecipe(
             ItemList.Machine_Multi_VacuumFreezer.get(1L),
             GTModHandler.RecipeBits.BITSD,
